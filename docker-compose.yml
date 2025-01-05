@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: k8spublisher:1.0
+    ports:
+      - "8085:8080" # Mapea el puerto del contenedor al host
+    environment:
+      ENV: docker
+      SPRING_PROFILES_ACTIVE: prod # Configura el perfil activo de Spring Boot (opcional)
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
