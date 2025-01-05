@@ -19,7 +19,8 @@ public class PersonController {
     @GetMapping("products/all")
     public List<Person> list() {
         System.out.println("Desde el environment: " + environment);
-        List<Person> persons = new ArrayList<Person>();
+
+        List<Person> persons = new ArrayList<>();
         persons.add(new Person("Jesus",30));
         persons.add(new Person("David",32));
         persons.add(new Person("Fabrizio",4));
